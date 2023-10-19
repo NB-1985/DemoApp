@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Header from './component/header/Header'
+import Navbar from './component/navbar/Navbar'
+import Home from './pages/home/Home'
+import PopularCategories from './pages/products/PopularCategories'
+import TopSellingItems from './pages/products/TopSellingItems'
+import DairyProducts from './pages/products/DairyProducts'
+import Ingredient from './pages/products/Ingredient'
+import WhyShopWithUs from './component/footer/WhyShopWithUs'
+import Footer from './component/footer/Footer'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header/>
+      <Navbar/>
+      <Home/>
+      <PopularCategories/>
+      <TopSellingItems/>
+      <DairyProducts/>
+      <Ingredient/>
+      <WhyShopWithUs/>
+      <Footer/>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
