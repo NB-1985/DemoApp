@@ -3,6 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="pt-[19px]">
+
       {/* img  */}
       <div className="relative">
         <img src="./img/Group 959.png" alt="" />
@@ -10,12 +11,11 @@ const Footer = () => {
         <img src="./img/Group 960.png" alt="" className="absolute bottom-3" />
       </div>
 
-      {/* content container */}
-
-      <div className="w-[90%] mx-auto flex justify-between pt-[80px] pb-[38px]" >
+      {/* content container  */}
+      <div className="w-[90%] mx-auto flex  flex-wrap gap-8 lg:gap-0 lg:flex-nowrap justify-between pt-[80px] pb-[38px]" >
         <div>
           <ul>
-            <p className="pb-[12px]">Information</p>
+            <p className="pb-[12px] font-bold">Information</p>
             <li>Store Location</li>
             <li>Term & Conditions</li>
             <li>Sitemaps</li>
@@ -26,7 +26,7 @@ const Footer = () => {
 
         <div>
           <ul>
-            <p className="pb-[12px]">About us</p>
+            <p className="pb-[12px] font-bold">About us</p>
             <li>Our Story</li>
             <li>General Enquiries</li>
             <li>Contact Us</li>
@@ -37,7 +37,7 @@ const Footer = () => {
 
         <div>
           <ul>
-            <p className="pb-[12px]">Shop</p>
+            <p className="pb-[12px] font-bold">Shop</p>
             <li>All Products</li>
             <li>Special Offers</li>
             <li>Brands</li>
@@ -46,14 +46,14 @@ const Footer = () => {
           </ul>
         </div>
 
-        <div className="w-[454px] flex flex-col justify-between">
-          <p>NEWS LETTER</p>
+        <div className="w-[454px]  gap-4 flex flex-col justify-between">
+          <p className="font-bold">NEWS LETTER</p>
           <p>Register now to get updates on promotions & coupons</p>
-          <div className=" relative flex bg-[#FFFF]  border-black border-2 rounded-full p-[16px] w-[454px ] justify-between">
+          <div className=" relative  flex bg-[#FFFF]  border-black border-2 rounded-full p-[16px] w-[454px ] justify-between">
             <input
               type="text"
               placeholder="Enter Your Email"
-              className="w-[454px]"
+              className="sm:w-[454px] w-[230px]"
             />
             <p className="absolute right-0 bg-black text-white rounded-full p-4 top-0">
               Subscribe
@@ -73,13 +73,13 @@ const Footer = () => {
 
 
 
-{/* rights reserved */}
+{/* rights reserved  */}
       <div className="pt-[24px] pb-[40px]">
 
         <div className="w-[90%] mx-auto flex justify-between">
           <p><span className="font-[700]">Epic Grocery</span> 2021. All Rights Reserved //<span>Created by &copy;NeelBhimani</span></p>
           
-          <div className="flex gap-3">
+          <div className="flex flex-wrap lg:flex-nowrap  gap-3">
             <p className="font-[500] text-[14px] text-[#0F0F0F] leading-[28px]">We Use Secure Payment Processing Methods</p>
             <img src="./img/Group 3.svg" alt="" />
             <img src="./img/Group 6.svg" alt="" />

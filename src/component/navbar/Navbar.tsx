@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+
 
 const Navbar = () => {
+  const [nav, setnav] = useState(false);
+  
+
   return (
     <div>
       {/* main container */}
@@ -8,11 +12,15 @@ const Navbar = () => {
         {/* inner container */}
 
         <div className="w-[90%] h-[50px]  mx-auto flex justify-between items-center">
-          {/* left part */}
+          {/* //^left part */}
           <div>All Categories </div>
 
-          {/* middle part */}
-          <div>
+
+
+
+
+          {/* //! middle part */}
+          <div className="hidden ">
             <ul className="flex gap-8 ">
                 <li className="hover:text-[#FEBF34]"><a href="">Home</a></li>
                 <li className="hover:text-[#FEBF34]"><a href="">New Products</a></li>
@@ -22,8 +30,11 @@ const Navbar = () => {
             </ul>
           </div>
 
-          {/* right part */}
-          <div className="flex items-center gap-4">
+
+
+
+          {/* //*right part */}
+          <div className="sm:flex items-center gap-4 hidden">
           <div>
             <p>Deliver to</p>
           </div>
