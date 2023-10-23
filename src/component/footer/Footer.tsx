@@ -77,7 +77,7 @@ const Footer = () => {
       <div className="pt-[24px] pb-[40px]">
 
         <div className="w-[90%] mx-auto flex justify-between">
-          <p><span className="font-[700]">Epic Grocery</span> 2021. All Rights Reserved //<span>Created by &copy;NeelBhimani</span></p>
+          <p><span className="font-[700]">Epic Grocery</span> 2023. All Rights Reserved //<span>Created by &copy;NeelBhimani</span></p>
           
           <div className="flex flex-wrap lg:flex-nowrap  gap-3">
             <p className="font-[500] text-[14px] text-[#0F0F0F] leading-[28px]">We Use Secure Payment Processing Methods</p>

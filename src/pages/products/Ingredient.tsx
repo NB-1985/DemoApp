@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../component/re_usable/Button";
+import IngredientCard from "../../component/re_usable/IngredientCard";
 
 const Ingredient = () => {
   return (
@@ -16,16 +17,14 @@ const Ingredient = () => {
             <p className="text-[#0AAD0A] text-[16px]">Spcity Foods</p>
             <p className="font-[700] text-[34px]">Save 35% OFF</p>
             <p className="text-[16px] font-[400]">Available at best prices</p>
-            <Button
-              bgColor="#5A9C17"
-              width="160px"
-              hoverBg="black"
-              height="45px"
-              name="Shop Now"
-              textColor="#FFFF"
-            />
+            <Button name="Shop Now"/>
           </div>
         </div>
+
+
+{/* <IngredientCard title="back" description="name" sale="78" bgi="https://images.pexels.com/photos/18281979/pexels-photo-18281979/free-photo-of-sweet-pancakes-on-plate-on-table.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"/> */}
+
+
 
         {/* second card  */}
         <div
@@ -36,14 +35,7 @@ const Ingredient = () => {
             <p className="text-[#0AAD0A] text-[16px]">Natural Beauty</p>
             <p className="font-[700] text-[34px]">Save 25% OFF</p>
             <p className="text-[16px] font-[400]">Available at best prices</p>
-            <Button
-              bgColor="#5A9C17"
-              width="160px"
-              hoverBg="black"
-              height="45px"
-              name="Shop Now"
-              textColor="#FFFF"
-            />
+            <Button name="Shop Now"/>
           </div>
         </div>
       </div>     {/* card container end  */}
@@ -59,11 +51,7 @@ const Ingredient = () => {
             <p className="text-[#0AAD0A] text-[16px]">Black Fridays! offer</p>
             <p className="font-[700] text-[34px]">Sale 50% OFF</p>
             <p className="text-[16px] font-[400]">Available at best prices</p>
-               <Button
-              bgColor="#5A9C17" 
-              width="160px" 
-              hoverBg="black"
-             height="45px" name="Shop Now" textColor="#FFFF"/>
+            <Button name="Shop Now"/>
           </div>
         </div>
       </div>

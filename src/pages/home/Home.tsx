@@ -25,13 +25,9 @@ const Home = () => {
                 10% certifled-organic mix of fruit and veggies. Perfect for
                 weekly cooking and snacking!
               </p>
-              
-              <Button 
-              bgColor="#5A9C17" 
-              width="160px" 
-              hoverBg="black"
-             height="45px" name="Shop Now" textColor="#FFFF"/>
-            
+
+
+<Button name="Shop Now"/>
             </div>
           </div>
 

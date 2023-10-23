@@ -1,8 +1,29 @@
-import React from "react";
+import { useDispatch } from "react-redux";
+import { increment } from "../../slices_reducers/counterSlice";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import Button from "./Button";
 
-const ItemCard = ({ title, image, description, price }: any) => {
+interface itemCardComponent {
+  title?: string;
+  description?: string;
+  itemImage?: string;
+  price?: string | number;
+}
+
+const ItemCard = ({
+  title,
+  description,
+  price,
+  itemImage,
+}: itemCardComponent) => {
+
+  const dispatch=useDispatch();
+
+const itemCard=[{title:"",description:"",price:"",itemImage:""}]
+
   return (
+
     <div
       className="border-slate-200  border-2 h-[346px] w-[239px]
           flex flex-col justify-evenly px-2 "
@@ -13,33 +34,26 @@ const ItemCard = ({ title, image, description, price }: any) => {
           Off
         </div>
 
-        <img src="./img/image 23.png" alt="maggie image" />
+        <img src={`${itemImage}`} alt="item image" />
       </div>
 
-      <div className="flex justify-between">
-        <span className="text-[#A0A0A0] text-[14px]"> {title}</span>
-        <span>
-          <img src={`${image}`} alt="" />
-        </span>
+      <div>
+        <div className="flex justify-between">
+          <span className="text-[#A0A0A0] text-[14px]"> {title}</span>
+          <span>
+            <img src="./img/fav.svg" alt="fav" />
+          </span>
+        </div>
+
+        <div className="flex justify-between green">
+          <span className="text-[14px] font-[500]">{description}</span>
+          <span> {price}</span>
+        </div>
       </div>
 
-      <div className="flex justify-between">
-        <span className="text-[14px] font-[500]">{description}</span>
-        <span> {price}</span>
-      </div>
 
-      <Button
-        bgColor="#FFFFFF"
-        width="210px"
-        height="40px"
-        name="Add to Cart"
-        border="2"
-        borderColor="black"
-        textColor="#000000"
-        hoverText="white"
-        hoverBg="black"
-        margin="auto"
-      />
+<Button name="Shop Now" className="text-gray-950 w-full bg-white border-2 hover:bg-[#5A9C17]" />
+    
     </div>
   );
 };

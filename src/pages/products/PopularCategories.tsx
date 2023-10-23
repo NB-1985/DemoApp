@@ -37,14 +37,7 @@ const PopularCategories = () => {
             <div className="pl-[60px]  w-full flex flex-col pt-[86px] gap-4 h-full">
               <p className="text-[#0AAD0A]">Summer Offer 20% Off</p>
               <p className="font-[700] text-[20px]">Fresh Fruits Big Sale</p>
-              <Button
-                bgColor="#5A9C17"
-                width="160px"
-                hoverBg="black"
-                height="45px"
-                name="Shop Now"
-                textColor="#FFFF"
-              />
+              <Button name="Shop Now"/>
             </div>
           </div>
           </div>
@@ -58,14 +51,7 @@ const PopularCategories = () => {
             <div className="pl-[60px]  w-full flex flex-col pt-[86px] gap-4 h-full">
               <p className="text-[#0AAD0A]">Fresh Farm Products 40% Off</p>
               <p className="font-[700] text-[20px]">Vegetable Big Sale</p>
-              <Button
-                bgColor="#5A9C17"
-                width="160px"
-                hoverBg="black"
-                height="45px"
-                name="Shop Now"
-                textColor="#FFFF"
-              />
+           <Button name="Shop Now"/>
             </div>
             </div>
           </div>

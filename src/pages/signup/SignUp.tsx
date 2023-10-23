@@ -4,7 +4,7 @@ import {  Link, useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
 import Button from "../../component/re_usable/Button";
 
-const Login = () => {
+const SignUp = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [valid, setValid] = useState<boolean>(false);
 
@@ -47,7 +47,7 @@ const Login = () => {
 
   return (
     <div className=" p-6 grid place-content-center">
-      <h1 className="p-4 text-xl">Login To Continue...</h1>
+      <h1 className="p-4 text-xl">SignUp To Continue...</h1>
       <div className="bg-white h-auto p-4 w-[40vw] border-2  border-zinc-500 rounded-3xl">
         <form
           onPaste={() => {
@@ -58,7 +58,22 @@ const Login = () => {
           onSubmit={handleSubmit(formSubmit)}
           className="flex flex-col  justify-around h-full gap-4"
         >
-        
+          <div className="flex flex-col">
+            <label htmlFor="firstname">First Name<span className="text-red-700">*</span></label>
+            <input
+              className="p-2 border-2 border-stone-200 rounded-md "
+              type="text"
+              id="firstname"
+              placeholder="Enter Your First Name"
+              {...register("firstname", {
+                required: {
+                  value: true,
+                  message: "Enter a firstname",
+                },
+              })}
+            />
+            <p className="text-red-600">{errors.firstname?.message}</p>
+          </div>
         <div className="flex flex-col">
             <label htmlFor="email">Email<span className="text-red-700">*</span></label>
             <input
@@ -107,7 +122,26 @@ const Login = () => {
             <p className="text-red-600">{errors.password?.message}</p>
             {/* <p className="text-red-600">{JSON.stringify(errors.password?.message)}</p> */}
           </div>
-      
+          <div className="flex flex-col">
+            <label htmlFor="confirmpassword">Confirm Password<span className="text-red-700">*</span></label>
+            <input
+              className="p-2 border-2 border-stone-200 rounded-md "
+              type="password"
+              id="confirmpassword"
+              placeholder="Confirm The Password"
+              {...register("confirmpassword", {
+                required: {
+                  value: true,
+                  message: "Password Does Not Match",
+                },
+                validate: (match) => {
+                  const password = getValues("password");
+                  return match === password || "Passwords should match!";
+                },
+              })}
+            />
+            <p className="text-red-600">{errors.confirmpassword?.message}</p>
+          </div>
           
           <div>
             <input
@@ -143,10 +177,10 @@ const Login = () => {
       <p className="py-3">Already User? Login...</p>
       
       <div>
-      <Button onclick={()=>navigate(-1)} name="BACK" className="hover:bg-zinc-700"/>
+      <Link to={"/signup/login"}><Button name="Logg In" className="hover:bg-zinc-700"/></Link>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

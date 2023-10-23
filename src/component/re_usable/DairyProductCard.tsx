@@ -1,7 +1,18 @@
 import React from "react";
 import Button from "./Button";
 
-const DairyProducts = ({ title, description, image, bgColor }: any) => {
+interface dairyProduct {
+  title?: string;
+  description?: string;
+  image?: string;
+  bgColor?: string;
+}
+const DairyProducts = ({
+  title,
+  description,
+  image,
+  bgColor,
+}: dairyProduct) => {
   return (
     <div className="pt-[80px]">
       {/* container for card  */}
@@ -17,16 +28,7 @@ const DairyProducts = ({ title, description, image, bgColor }: any) => {
           <p className="font-[700] text-[20px]"> {title}</p>
 
           <p className="text-[16px] font-[400] text-center">{description}</p>
-
-          <Button
-            bgColor="#FFFFFF"
-            width="160px"
-            height="45px"
-            name="Shop Now"
-            border="2"
-            borderColor="black"
-            textColor="#000000"
-          />
+          <Button name="Shop Now" />
         </div>
       </div>
     </div>

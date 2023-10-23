@@ -16,11 +16,8 @@ const Navbar = () => {
           <div>All Categories </div>
 
 
-
-
-
           {/* //! middle part */}
-          <div className="hidden ">
+          <div className="hidden lg:block ">
             <ul className="flex gap-8 ">
                 <li className="hover:text-[#FEBF34]"><a href="">Home</a></li>
                 <li className="hover:text-[#FEBF34]"><a href="">New Products</a></li>

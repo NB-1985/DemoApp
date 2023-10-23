@@ -1,13 +1,21 @@
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+
+
+  const state=useSelector((state:any)=>state.counter)
+
+
+
+
   return (
-    <div>
+    <div className="sticky top-0">
       {/* main container */}
-      <div className="w-100% bg-[#FFFFFF] ">
+      <div className="bg-[#FFFFFF]  ">
         {/* inner container */}
 
-        <div className="w-[90%] h-[82px]  mx-auto flex justify-between items-center">
+        <div className="w-[90%]  h-[82px]  mx-auto flex justify-between items-center">
 
           {/*  //!left part */}
 
@@ -41,18 +49,18 @@ const Header = () => {
 
             <div className="flex sm:gap-2 ">
               <p className="hidden lg:block">My Cart</p>
-              <img src="./img/Group 879.svg" alt="cart"  />(0)
+              <img src="./img/Group 879.svg" alt="cart"  />{state}
             </div>
 
 
 
           {/* //*for routing to login page  */}
-             {/* <Link to={"/login"}>  */}
+             <Link to={"signup"}> 
              <div className="flex gap-2">
               <img src="./img/Group 755.svg" alt="login" />
               <p className="hidden lg:block">Login</p>
             </div>
-            {/* </Link>  */}
+            </Link> 
             
           </div>
         </div>

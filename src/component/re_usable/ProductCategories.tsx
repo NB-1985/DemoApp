@@ -1,6 +1,11 @@
 import React from 'react'
 
-const ProductCategories = ({title,image}:any) => {
+interface itemCardComponent {
+  title?:string;
+  image?:string;
+}
+
+const ProductCategories = ({title,image}:itemCardComponent) => {
   return (
     <div>
         <div className="h-[122px] w-[190px]  flex justify-center items-center flex-col gap-4 border-2 border-slate-200 shadow-2xl">
