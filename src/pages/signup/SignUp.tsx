@@ -46,9 +46,9 @@ const SignUp = () => {
   }, [valid]);
 
   return (
-    <div className=" p-6 grid place-content-center">
+    <div className=" p-6 grid place-content-center ">
       <h1 className="p-4 text-xl">SignUp To Continue...</h1>
-      <div className="bg-white h-auto p-4 w-[40vw] border-2  border-zinc-500 rounded-3xl">
+      <div className="bg-white h-auto p-4 sm:w-[40vw] border-2  border-zinc-500 rounded-3xl">
         <form
           onPaste={() => {
             alert("paste not allowed");
@@ -177,7 +177,7 @@ const SignUp = () => {
       <p className="py-3">Already User? Login...</p>
       
       <div>
-      <Link to={"/signup/login"}><Button name="Logg In" className="hover:bg-zinc-700"/></Link>
+      <Link to={"/signup/login"}><Button name="LogIn" className="hover:bg-zinc-700"/></Link>
       </div>
     </div>
   );

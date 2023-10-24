@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="pt-[19px]">
+    <div className="pt-[30px]">
 
       {/* img  */}
       <div className="relative">

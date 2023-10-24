@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import ItemCard from "../../component/re_usable/ItemCard";
 import axios from "axios";
+import "slick-carousel/slick/slick.css";
+ import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 const TopSellingItems = () => {
 
@@ -10,6 +13,7 @@ const TopSellingItems = () => {
 axios.get("https://jsonplaceholder.typicode.com/posts")
 .then((res=>setData(res.data)))
   },[])
+
 
   return (
     
@@ -31,13 +35,25 @@ axios.get("https://jsonplaceholder.typicode.com/posts")
 
          {/* card  */}
 
+         {/* {data.slice(0,20).map((e:any)=>
+         <div>
+          <ItemCard
+            title={e.id}
+            description="Madhur Pure & Hygienic Sulphurless Sugar..."
+            price="$0.48"
+            itemImage="./img/image 23.png"
+          />
+          </div>
+         )} */}
+
+            
+        
             <ItemCard
             title="Maggi"
             description="Madhur Pure & Hygienic Sulphurless Sugar..."
             price="$0.48"
             itemImage="./img/image 23.png"
           />
-        
             <ItemCard
             title="Maggi"
             description="Madhur Pure & Hygienic Sulphurless Sugar..."
@@ -65,7 +81,6 @@ axios.get("https://jsonplaceholder.typicode.com/posts")
             description="Madhur Pure & Hygienic Sulphurless Sugar..."
             price="$0.48"
             itemImage="./img/image 23.png"
-
           />
         </div>
         {/* card container ends here  */}
@@ -76,4 +91,9 @@ axios.get("https://jsonplaceholder.typicode.com/posts")
   );
 };
 
+
+
 export default TopSellingItems;
+
+
+

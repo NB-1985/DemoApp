@@ -3,6 +3,8 @@ import Button from "../../component/re_usable/Button";
 import ItemCard from "../../component/re_usable/ItemCard";
 
 const ProductDetail = () => {
+
+
   return (
     <div>
       <div className="pt-[40px]">
@@ -172,9 +174,6 @@ const ProductDetail = () => {
 {/* dont forget to add  */}
 
 <div className="pt-[60px]">
-
-
-
  <div className="mx-auto w-[90%]">
  <div className="font-[700] text-[24px] pb-[24px] text-center xl:text-start">
   Dont Forget To Add
@@ -187,8 +186,60 @@ const ProductDetail = () => {
   <ItemCard itemImage="./img/image 23.svg" title="Neem" description="Neem Powder" price="$1.59"/>
   </div>
   </div>
-  
+  <div className="border-b-2 w-[90%] mx-auto pt-[60px] " ></div>
  </div>
+
+
+
+{/* product rating */}
+
+
+<div className="pt-[60px]">
+
+  <div className="mx-auto w-[90%] h-[383px] flex flex-col justify-between">
+
+    {/* top part  */}
+<div className="flex flex-col justify-between h-full">
+<div className="flex justify-between items-center">
+  <p className="sm:font-[700] font-[500] text-[20px]">Product Rating</p>
+  <Button name="Write a Review" className="w-20 sm:w-[160px] rounded " />
+</div>
+ 
+<div>
+<p className="sm:text-[60px] font-[500] text-[30px] sm:font-[700]">4.0/5</p>
+<p><img src="./img/Group 848.svg" alt="" /></p>
+</div>
+
+
+<p className="sm:font-[700] font-[500] text-[20px]">
+  All Review (4)
+</p>
+</div>
+<div className="border-b-2"></div>
+
+{/* bottom part  */}
+<div className="pt-[29px] ">
+
+<div className="flex justify-between flex-col gap-3 " >
+  <div className="flex justify-between ">
+    <p className="font-[700] text-[#5A9C17]">Cameron Williamson</p>
+    <p className="text-[#9A9A9A] text-[14px]">24 October 2023</p>
+  </div>
+
+  <p className="font-[700]">
+  Osk, Totem Credence
+  </p>
+
+  <p className="font-[500] text-[14px]">
+  Highlay recommand everyone. The matrial is super slight and great for me, but little see througts, so be careful
+  </p>
+  </div>
+</div>
+  </div>
+
+</div>
+
+
     </div>
   );
 };

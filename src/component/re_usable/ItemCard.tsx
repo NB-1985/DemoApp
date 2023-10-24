@@ -3,6 +3,7 @@ import { increment } from "../../slices_reducers/counterSlice";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 interface itemCardComponent {
   title?: string;
@@ -34,7 +35,7 @@ const itemCard=[{title:"",description:"",price:"",itemImage:""}]
           Off
         </div>
 
-        <img src={`${itemImage}`} alt="item image" />
+       <Link to={"/productdetail"}><img src={`${itemImage}`} alt="item image" /></Link> 
       </div>
 
       <div>

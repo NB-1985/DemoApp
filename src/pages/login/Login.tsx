@@ -48,7 +48,7 @@ const Login = () => {
   return (
     <div className=" p-6 grid place-content-center">
       <h1 className="p-4 text-xl">Login To Continue...</h1>
-      <div className="bg-white h-auto p-4 w-[40vw] border-2  border-zinc-500 rounded-3xl">
+      <div className="bg-white h-auto p-4 sm:w-[40vw] border-2  border-zinc-500 rounded-3xl">
         <form
           onPaste={() => {
             alert("paste not allowed");
@@ -140,9 +140,8 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <p className="py-3">Already User? Login...</p>
       
-      <div>
+      <div className="py-3">
       <Button onclick={()=>navigate(-1)} name="BACK" className="hover:bg-zinc-700"/>
       </div>
     </div>
