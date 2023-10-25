@@ -25,8 +25,6 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handle);
     };
   });
-
-
   
 
   return (
@@ -36,6 +34,8 @@ const Navbar = () => {
         {/* inner container */}
 
         <div  ref={menu} className=" w-[90%] relative py-[22px] mx-auto flex justify-between items-center">
+
+          
           {/* //^left part */}
           <div >All Categories </div>
 
@@ -54,7 +54,7 @@ const Navbar = () => {
           </div>
 
 
-        {/* below for hamburger menu */}
+        {/* //*below for hamburger menu */}
         <div
         onClick={handlenav}
         className="lg:hidden block cursor-pointer absolute right-0  z-20 "
@@ -88,7 +88,7 @@ const Navbar = () => {
           </div>
           </div>
 
-          
+
         </div>
       </div>
     </div>

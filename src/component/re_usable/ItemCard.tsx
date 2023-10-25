@@ -24,10 +24,10 @@ const ItemCard = ({
 const itemCard=[{title:"",description:"",price:"",itemImage:""}]
 
   return (
-
+<div className="pb-12 px-3">
     <div
-      className="border-slate-200  border-2 h-[346px] w-[239px]
-          flex flex-col justify-evenly px-2 "
+      className="border-slate-200  border-2  h-[346px] md:w-[218px]   lg:h-[346px] sm:w-[180px]
+          flex flex-col justify-evenly px-2"
     >
       <div className="grid place-content-center relative ">
         <div className="h-12 text-white font-[500] absolute top-0 right-0 bg-[#5A9C17] rounded-full w-12 flex justify-center ">
@@ -55,6 +55,7 @@ const itemCard=[{title:"",description:"",price:"",itemImage:""}]
 
 <Button name="Shop Now" className="text-gray-950 w-full bg-white border-2 hover:bg-[#5A9C17]" />
     
+    </div>
     </div>
   );
 };

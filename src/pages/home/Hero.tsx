@@ -5,11 +5,12 @@ import DairyProducts from "../products/DairyProducts";
 import Ingredient from "../products/Ingredient";
 import WhyShopWithUs from "../../component/footer/WhyShopWithUs";
 import WeAtService from "../../component/we_are_at_service/WeAtService";
+import React_Sliider from "../../React_Sliider";
 
 const Hero = () => {
   return (
     <div>
-    
+   
       <Home />
        <PopularCategories />
       <TopSellingItems />
@@ -17,6 +18,7 @@ const Hero = () => {
       <WeAtService/>
       <Ingredient />
       <WhyShopWithUs />  
+      <React_Sliider/>
     </div>
   );
 };
