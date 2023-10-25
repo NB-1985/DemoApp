@@ -53,7 +53,7 @@ const itemCard=[{title:"",description:"",price:"",itemImage:""}]
       </div>
 
 
-<Button name="Shop Now" className="text-gray-950 w-full bg-white border-2 hover:bg-[#5A9C17]" />
+<Button name="Shop Now" className="w-full hover:text-[white]  bg-white text-black border-2 hover:bg-[#5A9C17] border-black " />
     
     </div>
     </div>

@@ -61,7 +61,7 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-4">
-            <a href="https://twitter.com"><img src="./img/Group 590.svg" alt="" /></a>  
+            <a href="https://www.facebook.com/"><img src="./img/Group 590.svg" alt="" /></a>  
             <a href="https://instagram.com"><img src="./img/Group 589.svg" alt="" /></a>  
             <a href="https://youtube.com"><img src="./img/Group 588.svg" alt="" /></a>  
             <a href="https://linkedin.com"><img src="./img/Group 591.svg" alt="" /></a>  

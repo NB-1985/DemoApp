@@ -3,11 +3,13 @@ import { useForm } from "react-hook-form";
 import {  Link, useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
 import Button from "../../component/re_usable/Button";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../slices_reducers/signUpSlice";
 
 const SignUp = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [valid, setValid] = useState<boolean>(false);
-
+const dispatch:any=useDispatch();
  let navigate: any = useNavigate();
 
   const form = useForm<formVlaue>();
@@ -16,10 +18,8 @@ const SignUp = () => {
     firstname?: string;
     lastname?: string;
     email?: string;
-    mobilenumber?: Number;
     password?: string;
     confirmpassword?: string;
-    message?: string;
     tc?: boolean;
   }
   const {
@@ -31,12 +31,11 @@ const SignUp = () => {
 
   const formSubmit = (info: formVlaue) => {
     setLoading(true);
-    setTimeout(() => {
       setLoading(false);
       setValid(true);
+      dispatch(signUp(info))
       let login = JSON.stringify(info);
       localStorage.setItem("login", login);
-    }, 3000);
   };
 
   useEffect(() => {
@@ -73,6 +72,22 @@ const SignUp = () => {
               })}
             />
             <p className="text-red-600">{errors.firstname?.message}</p>
+          </div>
+          <div className="flex flex-col">
+            <label htmlFor="lastname">Last Name<span className="text-red-700">*</span></label>
+            <input
+              className="p-2 border-2 border-stone-200 rounded-md "
+              type="text"
+              id="lastname"
+              placeholder="Enter Your Last Name"
+              {...register("lastname", {
+                required: {
+                  value: true,
+                  message: "Enter a lastname",
+                },
+              })}
+            />
+            <p className="text-red-600">{errors.lastname?.message}</p>
           </div>
         <div className="flex flex-col">
             <label htmlFor="email">Email<span className="text-red-700">*</span></label>

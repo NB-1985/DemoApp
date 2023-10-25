@@ -10,7 +10,7 @@ const Header = () => {
 
 
   return (
-    <div className="sticky top-0">
+    <div className="sticky top-0 z-50">
       {/* main container */}
       <div className="bg-[#FFFFFF]  ">
         {/* inner container */}
@@ -21,10 +21,11 @@ const Header = () => {
 
           <div className="flex gap-10">
 
-            <div className="flex gap-2">
+          <Link to={"/"}>
+          <div className="flex gap-2">
             <img src="./img/Group 938.svg" alt="grocery" />           
             <p className="hidden md:block">Epic Grocery</p>
-            </div>
+            </div></Link>  
 
             <div className="lg:flex gap-2 hidden ">
               <img src="./img/Delivery.svg" alt="delivery" />

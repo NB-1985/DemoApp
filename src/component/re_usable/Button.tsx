@@ -16,7 +16,7 @@ interface button {
 
 const Button=({name,className,onclick}:button)=>{
 return (
-  <button onClick={onclick} className={ `bg-[#5A9C17] w-[160px] h-[45px]  text-white text-[16px] ${className && className}`}>{name}</button>
+  <button onClick={onclick} className={ `${className && className} bg-[#5A9C17] w-[160px] h-[45px]  text-white text-[16px] `}>{name}</button>
 )
 };
 

@@ -6,12 +6,14 @@ interface dairyProduct {
   description?: string;
   image?: string;
   bgColor?: string;
+className?: string;
 }
 const DairyProducts = ({
   title,
   description,
   image,
   bgColor,
+  className,
 }: dairyProduct) => {
   return (
     <div className="pt-[80px]">
@@ -19,7 +21,7 @@ const DairyProducts = ({
       <div>
         {/*  card */}
         <div
-          className={`h-[368px] bg-[${bgColor}]  w-[280px] sm:w-[410px] rounded-md flex flex-col justify-evenly  items-center`}
+          className={` ${className} h-[368px] bg-gray-400  w-[280px] md:w-[260px] xl:w-[410px] rounded-md flex flex-col justify-evenly  items-center`}
         >
           <div>
             <img src={`${image}`} alt="" />
@@ -27,8 +29,8 @@ const DairyProducts = ({
 
           <p className="font-[700] text-[20px]"> {title}</p>
 
-          <p className="text-[16px] font-[400] text-center">{description}</p>
-          <Button name="Shop Now" />
+          <p className="text-[16px]  p-2 font-[400] text-center">{description}</p>
+          <Button name="Shop Now" className="bg-white text-black border-2 border-black " />
         </div>
       </div>
     </div>

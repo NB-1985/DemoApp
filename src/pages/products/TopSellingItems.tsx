@@ -13,35 +13,13 @@ const TopSellingItems = () => {
   // .then((res=>setData(res.data)))
   //   },[])
 
-  function SampleNextArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
-
-  function SamplePrevArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
+ 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 3,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1280,
@@ -158,7 +136,7 @@ const TopSellingItems = () => {
               itemImage="./img/image 23.png"
             />
           </Slider>
-        </div>{" "}
+        </div>
         {/* card container ends here  */}
       </div>
     </div>

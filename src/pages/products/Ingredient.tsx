@@ -4,14 +4,14 @@ import IngredientCard from "../../component/re_usable/IngredientCard";
 
 const Ingredient = () => {
   return (
-    <div className="pt-[80px]">
+    <div>
       {/* card container  */}
-      <div className="w-[90%] mx-auto flex justify-center gap-8 xl:gap-0 flex-wrap xl:flex-nowrap xl:justify-between">
+      <div className="w-[90%] mx-auto flex justify-center gap-8 xl:gap-0 flex-wrap md:flex-nowrap  xl:justify-between">
 
         {/* card  */}
         <div
           style={{ backgroundImage: `url("./img/image 31.png")` }}
-          className="h-[490px] w-[631px] bg-center "
+          className="h-[490px] md:h-[300px] md:w-[500px] w-full lg:w-[631px]  bg-center "
         >
           <div className=" h-full flex flex-col justify-center pl-[40px] gap-4">
             <p className="text-[#0AAD0A] text-[16px]">Spcity Foods</p>
@@ -29,7 +29,7 @@ const Ingredient = () => {
         {/* second card  */}
         <div
           style={{ backgroundImage: `url("./img/image 32.png")` }}
-          className="h-[490px] w-[631px] bg-center "
+          className="h-[490px] md:h-[300px] md:w-[500px] w-full lg:w-[631px] bg-center "
         >
           <div className=" h-full flex flex-col justify-center pl-[40px] gap-4">
             <p className="text-[#0AAD0A] text-[16px]">Natural Beauty</p>
