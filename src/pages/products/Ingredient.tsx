@@ -8,7 +8,7 @@ const Ingredient = () => {
       {/* card container  */}
       <div className="w-[90%] mx-auto flex justify-center gap-8 xl:gap-0 flex-wrap md:flex-nowrap  xl:justify-between">
 
-        {/* card  */}
+        {/* //*  card  */}
         <div
           style={{ backgroundImage: `url("./img/image 31.png")` }}
           className="h-[490px] md:h-[300px] md:w-[500px] w-full lg:w-[631px]  bg-center "
@@ -26,7 +26,7 @@ const Ingredient = () => {
 
 
 
-        {/* second card  */}
+        {/* //* second card  */}
         <div
           style={{ backgroundImage: `url("./img/image 32.png")` }}
           className="h-[490px] md:h-[300px] md:w-[500px] w-full lg:w-[631px] bg-center "
@@ -38,10 +38,10 @@ const Ingredient = () => {
             <Button name="Shop Now"/>
           </div>
         </div>
-      </div>     {/* card container end  */}
+      </div>     {/* //* card container end  */}
   
 
-      {/* black friday offer   */}
+      {/* //^ black friday offer   */}
       <div className="pt-[30px] ">
         <div
           style={{ backgroundImage: `url("./img/image 30.png")` }}

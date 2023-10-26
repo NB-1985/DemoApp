@@ -6,13 +6,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const TopSellingItems = () => {
-  //   const [data,setData]=useState([])
-
-  //   useEffect(()=>{
-  // axios.get("https://jsonplaceholder.typicode.com/posts")
-  // .then((res=>setData(res.data)))
-  //   },[])
-
  
   const settings = {
     dots: true,
@@ -75,16 +68,19 @@ const TopSellingItems = () => {
 
   return (
     <div className="pt-[80px] ">
-      {/* container  */}
+      {/* //* container  */}
       <div className="w-[90%] mx-auto">
-        {/* title  */}
+
+        {/* //* title  */}
         <div className="grid place-content-center">
           <p className="pb-[8px] font-[700] text-[24px]"> Top Selling Items</p>
           <p className="text-[#A0A0A0]  text-[14px] text-center ">
             Available at Best Prices
           </p>
         </div>
-        {/*  card  container */}
+
+
+        {/*  //^ card  container */}
         <div className="pt-[24px]">
           <Slider {...settings}>
             <ItemCard
@@ -137,7 +133,7 @@ const TopSellingItems = () => {
             />
           </Slider>
         </div>
-        {/* card container ends here  */}
+        {/* //! card container ends here  */}
       </div>
     </div>
   );

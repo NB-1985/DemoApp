@@ -21,7 +21,7 @@ const DairyProducts = ({
       <div>
         {/*  card */}
         <div
-          className={` ${className} h-[368px] bg-gray-400  w-[280px] md:w-[260px] xl:w-[410px] rounded-md flex flex-col justify-evenly  items-center`}
+          className={` ${className} h-[368px] w-[280px] md:w-[260px] xl:w-[410px] rounded-md flex flex-col justify-evenly  items-center`}
         >
           <div>
             <img src={`${image}`} alt="" />
@@ -30,7 +30,8 @@ const DairyProducts = ({
           <p className="font-[700] text-[20px]"> {title}</p>
 
           <p className="text-[16px]  p-2 font-[400] text-center">{description}</p>
-          <Button name="Shop Now" className="bg-white text-black border-2 border-black " />
+          <Button name="Add To Cart " className="   !bg-white !text-black border-2  !border-black " />
+
         </div>
       </div>
     </div>

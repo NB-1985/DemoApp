@@ -90,9 +90,11 @@ const ProductDetail = () => {
   return (
     <div>
       <div className="pt-[40px]">
-        {/* product container  */}
+
+        {/* //^ product container  */}
         <div className="w-[90%] mx-auto xl:h-[572px] flex  flex-col xl:flex-row">
-          {/* left side  */}
+
+          {/* //^ left side  */}
           <div className=" flex justify-center  xl:pr-[142px]">
             <div className="flex flex-col gap-4 ">
               <p className=" w-[80px]">
@@ -109,7 +111,7 @@ const ProductDetail = () => {
             </div>
           </div>
 
-          {/* right side  */}
+          {/* //! right side  */}
           <div className=" flex justify-center pt-[24px] xl:pt-0">
             <div className="xl:w-[468px]">
               <p className="text-[24px] font-[400] leading-[30.24px] pb-[16px]">
@@ -170,7 +172,7 @@ const ProductDetail = () => {
         <p className="border-b-2 w-[90%] mx-auto pt-[57px]"></p>
       </div>
 
-      {/* about product part  */}
+      {/* //* about product part  */}
 
       <div className="pt-[60px]">
         <div className="mx-auto lg:flex  w-[90%] ">
@@ -225,7 +227,6 @@ const ProductDetail = () => {
                 </p>
                 <div className="flex flex-col gap-2">
                   <p>
-                    {" "}
                     <span className="font-[700]">AN Code:</span>3964454
                   </p>
                   <p>
@@ -257,17 +258,14 @@ const ProductDetail = () => {
       </div>
       <div className="border-b-2 w-[90%] mx-auto pt-[60px]"></div>
 
-      {/* dont forget to add  */}
+
+      {/* //! dont forget to add  */}
 
       <div className="pt-[60px]">
         <div className="mx-auto w-[90%]">
           <div className="font-[700] text-[24px] pb-[24px] px-3 text-center xl:text-start">
             Dont Forget To Add
           </div>
-
-          {/* <div className="flex xl:justify-between flex-wrap xl:flex-nowrap justify-center gap-4 xl:gap-0">
-  <ItemCard itemImage="./img/image 23.svg" title="Neem" description="Neem Powder" price="$1.59"/>
-  </div> */}
           <div className="mx-auto w-full sm:ml-0 ">
             <Slider {...settings}>
               <ItemCard
@@ -336,7 +334,7 @@ const ProductDetail = () => {
         <div className="border-b-2 w-[90%] mx-auto pt-[60px] "></div>
       </div>
 
-      {/* product rating */}
+      {/* //^ product rating */}
 
       <div className="pt-[60px]">
         <div className="mx-auto w-[90%] h-[383px] flex flex-col justify-between">

@@ -3,16 +3,15 @@ import React from "react";
 const Footer = () => {
   return (
     <div className="pt-[30px]">
-
-      {/* img  */}
+      {/* //* img  */}
       <div className="relative">
         <img src="./img/Group 959.png" alt="" />
         <img src="./img/Rectangle 161 (1).png" alt="" />
         <img src="./img/Group 960.png" alt="" className="absolute bottom-3" />
       </div>
 
-      {/* content container  */}
-      <div className="w-[90%] mx-auto flex  flex-wrap gap-8 lg:gap-0 lg:flex-nowrap justify-between pt-[80px] pb-[38px]" >
+      {/*  //* content container  */}
+      <div className="w-[90%] mx-auto flex  flex-wrap gap-8 lg:gap-0 lg:flex-nowrap justify-between pt-[80px] pb-[38px]">
         <div>
           <ul>
             <p className="pb-[12px] font-bold">Information</p>
@@ -61,33 +60,46 @@ const Footer = () => {
           </div>
 
           <div className="flex gap-4">
-            <a href="https://www.facebook.com/"><img src="./img/Group 590.svg" alt="" /></a>  
-            <a href="https://instagram.com"><img src="./img/Group 589.svg" alt="" /></a>  
-            <a href="https://youtube.com"><img src="./img/Group 588.svg" alt="" /></a>  
-            <a href="https://linkedin.com"><img src="./img/Group 591.svg" alt="" /></a>  
-            </div>
-        </div>
-      </div>
-      
-      <p className="border-2 border-black w-[90%] mx-auto"></p>
-
-
-
-{/* rights reserved  */}
-      <div className="pt-[24px] pb-[40px]">
-
-        <div className="w-[90%] mx-auto flex justify-between">
-          <p><span className="font-[700]">Epic Grocery</span> 2023. All Rights Reserved //<span>Created by &copy;NeelBhimani</span></p>
-          
-          <div className="flex flex-wrap lg:flex-nowrap  gap-3">
-            <p className="font-[500] text-[14px] text-[#0F0F0F] leading-[28px]">We Use Secure Payment Processing Methods</p>
-            <img src="./img/Group 3.svg" alt="" />
-            <img src="./img/Group 6.svg" alt="" />
-            <img src="./img/Vector.svg" alt="" />
-            <img src="./img/Group 5.svg" alt="" />
+            <a href="https://www.facebook.com/">
+              <img src="./img/Group 590.svg" alt="" />
+            </a>
+            <a href="https://instagram.com">
+              <img src="./img/Group 589.svg" alt="" />
+            </a>
+            <a href="https://youtube.com">
+              <img src="./img/Group 588.svg" alt="" />
+            </a>
+            <a href="https://linkedin.com">
+              <img src="./img/Group 591.svg" alt="" />
+            </a>
           </div>
         </div>
+      </div>
 
+      <p className="border-b-2 border-black w-[90%] mx-auto"></p>
+
+      {/* //! rights reserved  */}
+      <div className="pt-[24px] pb-[40px]">
+        <div className="w-[90%]  mx-auto flex flex-col  sm:flex-row sm:items-center sm:justify-between">
+
+          <p>
+            <span className="font-[700]">Epic Grocery</span> 2023. All Rights
+            Reserved. <br /> <span>Created by &copy;NeelBhimani</span>
+          </p>
+
+          <div className="pt-2 sm:pt-0  flex flex-col sm:flex-col lg:flex-row">
+            <p className=" flex  font-[500] text-[13px] sm:text-[14px] text-[#0F0F0F] leading-[28px]">
+              We Use Secure Payment Processing Methods
+            </p>
+            <div className="flex  gap-2">
+              <img src="./img/Group 3.svg" alt="" />
+              <img src="./img/Group 6.svg" alt="" />
+              <img src="./img/Vector.svg" alt="" />
+              <img src="./img/Group 5.svg" alt="" />
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );

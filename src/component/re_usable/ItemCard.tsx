@@ -1,7 +1,4 @@
 import { useDispatch } from "react-redux";
-import { increment } from "../../slices_reducers/counterSlice";
-import { useEffect, useState } from "react";
-import axios from "axios";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
@@ -26,13 +23,15 @@ const itemCard=[{title:"",description:"",price:"",itemImage:""}]
   return (
 <div className="pb-12 px-3">
     <div
-      className="border-slate-200  border-2  h-[346px] md:w-[218px]   lg:h-[346px] sm:w-[180px]
+      className="border-slate-200  border-2  h-[346px] md:w-[218px]  sm:w-[180px]
           flex flex-col justify-evenly px-2"
     >
       <div className="grid place-content-center relative ">
-        <div className="h-12 text-white font-[500] absolute top-0 right-0 bg-[#5A9C17] rounded-full w-12 flex justify-center ">
-          20% <br />
-          Off
+        <div className="h-12 text-white text-[14px] flex-col items-center font-[500] absolute right-0 top-0 bg-[#5A9C17] rounded-full w-12 flex justify-center ">
+          
+          <p>20%</p>
+          <p>off</p>
+
         </div>
 
        <Link to={"/productdetail"}><img src={`${itemImage}`} alt="item image" /></Link> 
@@ -53,7 +52,7 @@ const itemCard=[{title:"",description:"",price:"",itemImage:""}]
       </div>
 
 
-<Button name="Shop Now" className="w-full hover:text-[white]  bg-white text-black border-2 hover:bg-[#5A9C17] border-black " />
+<Button name="Add To Cart " className="w-full hover:!text-[white]  !bg-white !text-black border-2 hover:!bg-[#5A9C17] !border-black " />
     
     </div>
     </div>

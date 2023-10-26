@@ -4,7 +4,7 @@ import axios from "axios";
 export const signUp = createAsyncThunk("signup", async (data: any) => {
   try {
     const response = await axios.post(
-      "/auth/signup",
+      "http://localhost:3000/auth/signup",
       data
     );
     return response.data
@@ -26,7 +26,7 @@ const signUpSlice = createSlice({
     builder.addCase(signUp.pending, (state) => {
       state.isSignUpLoading = true;
       state.isSignUpError=false;
-      state.isSignUpSuccess
+      state.isSignUpSuccess=false;
     });
     builder.addCase(signUp.fulfilled, (state: any, action) => {
       state.isSignUpLoading = false;

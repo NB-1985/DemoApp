@@ -3,7 +3,7 @@ import Button from "../../component/re_usable/Button";
 const Home = () => {
   return (
     <div>
-      {/* main container */}
+      {/* main  //^ container */}
       <div className=" bg-[#F7FFEE] flex justify-center md:justify-end ">
         {/* inner container  */}
         <div
@@ -11,7 +11,7 @@ const Home = () => {
           flex-wrap md:flex-nowrap 
           "
         >
-          {/* left side */}
+          {/* //* left side */}
           <div className="flex items-center pt-5 xl:pt-0 ">
             <div className="h-[317px] mx-auto  md:w-[350px]  lg:w-[415px]  flex flex-col justify-evenly xl:justify-between">
               <p className="text-[#0AAD0A]">Save upto 30%</p>
@@ -27,7 +27,7 @@ const Home = () => {
             </div>
           </div>
 
-          {/* right side  */}
+          {/*  //* right side  */}
           <div className="pt-10 xl:pt-0 flex justify-end">
             <img src="./img/ewrwr 1.png" />
           </div>

@@ -70,10 +70,10 @@ const PopularCategories = () => {
       {/* container */}
       <div className="w-[90%] mx-auto flex flex-col ">
 
-        {/* tittle */}
+        {/*  //* tittle */}
         <p className="font-[700] text-[24px] text-center">Popular Categories</p>
 
-        {/* products */}
+        {/* //! products */}
         <div className="pt-[38px]">
           <Slider {...settings}>
         <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
@@ -91,7 +91,7 @@ const PopularCategories = () => {
           </Slider>
         </div>
 
-        {/* offers sale  */}
+        {/* //* offers sale  */}
         <div className="pt-[80px] flex
         flex-wrap md:flex-nowrap  
          items-center justify-center
@@ -99,7 +99,7 @@ const PopularCategories = () => {
          ">
 
           
-          {/* left img  */}
+          {/*  //^ left img  */}
           <div className="">
           <div
             className="h-[280px]  w-[300px] md:w-[360px] sm:w-[500px]  bg-center  lg:w-[490px] xl:w-[630px]" 
@@ -113,7 +113,7 @@ const PopularCategories = () => {
           </div>
           </div>
 
-          {/* right img  */}
+          {/* //^ right img  */}
           <div>
           <div
             className="h-[280px] w-[300px] bg-center md:w-[365px] lg:w-[490px] sm:w-[500px] xl:w-[630px]"

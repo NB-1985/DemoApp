@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <div>
       {/* main container */}
-      <div className="sticky top-0 w-100% bg-[#2F4858] text-[#FFFFFF]">
+      <div className=" bg-[#2F4858] text-[#FFFFFF]">
         {/* inner container */}
 
         <div
