@@ -1,4 +1,3 @@
-import React from "react";
 
 const Footer = () => {
   return (
@@ -80,26 +79,28 @@ const Footer = () => {
 
       {/* //! rights reserved  */}
       <div className="pt-[24px] pb-[40px]">
-        <div className="w-[90%]  mx-auto flex flex-col  sm:flex-row sm:items-center sm:justify-between">
 
+
+        <div className="w-[90%]  mx-auto flex flex-col  sm:flex-row sm:items-center sm:justify-between">
           <p>
             <span className="font-[700]">Epic Grocery</span> 2023. All Rights
             Reserved. <br /> <span>Created by &copy;NeelBhimani</span>
           </p>
 
-          <div className="pt-2 sm:pt-0  flex flex-col sm:flex-col lg:flex-row">
+          <div className="pt-2 sm:pt-0 lg:gap-2 flex flex-col sm:flex-col lg:flex-row">
             <p className=" flex  font-[500] text-[13px] sm:text-[14px] text-[#0F0F0F] leading-[28px]">
               We Use Secure Payment Processing Methods
             </p>
-            <div className="flex  gap-2">
+            <div className="flex  gap-2 ">
               <img src="./img/Group 3.svg" alt="" />
               <img src="./img/Group 6.svg" alt="" />
               <img src="./img/Vector.svg" alt="" />
               <img src="./img/Group 5.svg" alt="" />
             </div>
           </div>
-
         </div>
+
+
       </div>
     </div>
   );

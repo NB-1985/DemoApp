@@ -1,10 +1,34 @@
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { isLoggedIn } from "../auth/auth";
 
 const Header = () => {
 
+  const navigate=useNavigate();
 
-  const state=useSelector((state:any)=>state.counter)
+
+
+ let token:any= localStorage.getItem("token")
+ let userData=JSON.parse(token)
+
+const CartRoute=()=>{
+  if(isLoggedIn()){
+    navigate("productdetail")
+  }else{
+    navigate("signup")
+  }
+}
+
+
+  const handleLogOut=()=>{
+   let conf=prompt("Are You sure you want to Log Out!!","Enter Yes For Log Out")
+    if(conf==="yes"){
+      localStorage.removeItem("token")
+      navigate("/")
+    }
+    
+    
+  }
 
 
 
@@ -47,20 +71,31 @@ const Header = () => {
           {/* //!right part */}
           <div className="flex sm:gap-8 gap-3">
 
-            <div className="flex sm:gap-2 ">
+            
+            <div className="flex sm:gap-2 cursor-pointer" onClick={CartRoute}>
               <p className="hidden lg:block">My Cart</p>
-              <img src="./img/Group 879.svg" alt="cart"  />
+              <img src="./img/Group 879.svg" alt="cart"/>
             </div>
+            
 
 
 
-          {/* //*for routing to login page  */}
-             <Link to={"signup"}> 
-             <div className="flex gap-2">
-              <img src="./img/Group 755.svg" alt="login" />
-              <p className="hidden lg:block">Login</p>
+             <div className="flex items-center sm:gap-2 cursor-pointer" >
+              {
+                isLoggedIn() ?      
+
+                 //*conditionaly showing logout or login
+                 <div className="flex cursor-pointer sm:gap-2 items-center">
+              <img src="./img/Group 755.svg" alt="login"  className="sm:w-6 w-5"/>
+                <p className="text-[12px] text-right cursor-pointer" onClick={handleLogOut}>{userData  ? `Logout ${userData.firstname}` : null }</p>
+                </div>
+                  :
+                  <div className="flex gap-1 ">
+                    <img src="./img/Group 755.svg" alt="" className="w-4 sm:w-6"/>
+                  <p className="sm:text-[16px]  text-[13px] items-center  cursor-pointer" onClick={()=>navigate("signup")}>LogIn</p>
+                  </div>
+              }
             </div>
-            </Link> 
           </div>
 
 

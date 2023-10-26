@@ -1,4 +1,3 @@
-import { useDispatch } from "react-redux";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 
@@ -16,9 +15,7 @@ const ItemCard = ({
   itemImage,
 }: itemCardComponent) => {
 
-  const dispatch=useDispatch();
 
-const itemCard=[{title:"",description:"",price:"",itemImage:""}]
 
   return (
 <div className="pb-12 px-3">
@@ -34,7 +31,7 @@ const itemCard=[{title:"",description:"",price:"",itemImage:""}]
 
         </div>
 
-       <Link to={"/productdetail"}><img src={`${itemImage}`} alt="item image" /></Link> 
+       <Link to={"productdetail"}><img src={`${itemImage}`} alt="item image" /></Link> 
       </div>
 
       <div>

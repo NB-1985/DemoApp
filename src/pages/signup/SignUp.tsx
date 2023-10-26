@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import {  Link, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { TailSpin } from "react-loader-spinner";
 import Button from "../../component/re_usable/Button";
 import { useDispatch } from "react-redux";
-import { signUp } from "../../slices_reducers/signUpSlice";
+import { setTimeout } from "timers/promises";
+// import { signUp } from "../../slices_reducers/signUpSlice";
 
 const SignUp = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [valid, setValid] = useState<boolean>(false);
-const dispatch:any=useDispatch();
- let navigate: any = useNavigate();
+  const dispatch: any = useDispatch();
+  let navigate: any = useNavigate();
 
   const form = useForm<formVlaue>();
 
@@ -26,21 +27,21 @@ const dispatch:any=useDispatch();
     register,
     handleSubmit,
     getValues,
-    formState: { errors},
+    formState: { errors },
   } = form;
 
-  const formSubmit = (info: formVlaue) => {
-    setLoading(true);
-      setLoading(false);
-      setValid(true);
-      dispatch(signUp(info))
+    const  formSubmit = (info: formVlaue) => {
+      setLoading(true);
       let login = JSON.stringify(info);
-      localStorage.setItem("login", login);
+      localStorage.setItem("token", login);
+      setValid(true);
+      setLoading(false);
   };
+  
 
   useEffect(() => {
     if (valid === true) {
-      navigate("/home");
+      navigate("/");
     }
   }, [valid]);
 
@@ -58,7 +59,9 @@ const dispatch:any=useDispatch();
           className="flex flex-col  justify-around h-full gap-4"
         >
           <div className="flex flex-col">
-            <label htmlFor="firstname">First Name<span className="text-red-700">*</span></label>
+            <label htmlFor="firstname">
+              First Name<span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border-2 border-stone-200 rounded-md "
               type="text"
@@ -74,7 +77,9 @@ const dispatch:any=useDispatch();
             <p className="text-red-600">{errors.firstname?.message}</p>
           </div>
           <div className="flex flex-col">
-            <label htmlFor="lastname">Last Name<span className="text-red-700">*</span></label>
+            <label htmlFor="lastname">
+              Last Name<span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border-2 border-stone-200 rounded-md "
               type="text"
@@ -89,8 +94,10 @@ const dispatch:any=useDispatch();
             />
             <p className="text-red-600">{errors.lastname?.message}</p>
           </div>
-        <div className="flex flex-col">
-            <label htmlFor="email">Email<span className="text-red-700">*</span></label>
+          <div className="flex flex-col">
+            <label htmlFor="email">
+              Email<span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border-2 border-stone-200 rounded-md "
               type="email"
@@ -111,7 +118,9 @@ const dispatch:any=useDispatch();
           </div>
 
           <div className="flex flex-col">
-            <label htmlFor="password">Password<span className="text-red-700">*</span></label>
+            <label htmlFor="password">
+              Password<span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border-2 border-stone-200 rounded-md "
               type="password"
@@ -130,7 +139,7 @@ const dispatch:any=useDispatch();
                   value:
                     /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                   message:
-                    "please provide at least one special,one upper,one lower case and one number",
+                    "please provide password with at least one special,one upper case,one lower case and one number",
                 },
               })}
             />
@@ -138,7 +147,9 @@ const dispatch:any=useDispatch();
             {/* <p className="text-red-600">{JSON.stringify(errors.password?.message)}</p> */}
           </div>
           <div className="flex flex-col">
-            <label htmlFor="confirmpassword">Confirm Password<span className="text-red-700">*</span></label>
+            <label htmlFor="confirmpassword">
+              Confirm Password<span className="text-red-700">*</span>
+            </label>
             <input
               className="p-2 border-2 border-stone-200 rounded-md "
               type="password"
@@ -157,7 +168,7 @@ const dispatch:any=useDispatch();
             />
             <p className="text-red-600">{errors.confirmpassword?.message}</p>
           </div>
-          
+
           <div>
             <input
               type="checkbox"
@@ -190,10 +201,13 @@ const dispatch:any=useDispatch();
         </form>
       </div>
       <p className="py-3">Already User? Login...</p>
-      
+
       <div>
-      <Link to={"/signup/login"}><Button name="LogIn" className="hover:bg-zinc-700"/></Link>
+        <Link to={"/signup/login"}>
+          <Button name="LogIn" className="hover:bg-zinc-700" />
+        </Link>
       </div>
+      <Outlet />
     </div>
   );
 };

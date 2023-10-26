@@ -25,6 +25,7 @@ const Home = () => {
 
               <Button name="Shop Now" />
             </div>
+            
           </div>
 
           {/*  //* right side  */}
