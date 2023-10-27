@@ -3,9 +3,27 @@ import Button from "../../component/re_usable/Button";
 import ProductCategories from "../../component/re_usable/ProductCategories";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const PopularCategories = () => {
 
+
+  
+const [data, setData] = useState([])
+  useEffect( ()=>{
+    
+   const data:any=async ()=>{
+    const res= await axios.get("https://jsonplaceholder.typicode.com/photos")
+  setData(res.data)
+   }
+   data();
+  },[])
+
+
+
+
+  //* slider settings...
   const settings = {
     dots: true,
     infinite: true,
@@ -64,6 +82,8 @@ const PopularCategories = () => {
       },
     ],
   };
+
+
   return (
     <div className="pt-[80px]">
 
@@ -76,19 +96,12 @@ const PopularCategories = () => {
         {/* //! products */}
         <div className="pt-[38px]">
           <Slider {...settings}>
-        <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-       <ProductCategories title="Fresh Vegetables" image="./img/Group 938.svg"/>
-          </Slider>
+            {
+              data.slice(0,10).map((item:any)=>
+        <ProductCategories title={item.id} image={item.url}/>
+        )
+            }
+        </Slider>
         </div>
 
         {/* //* offers sale  */}
@@ -116,11 +129,11 @@ const PopularCategories = () => {
           {/* //^ right img  */}
           <div>
           <div
-            className="h-[280px] w-[300px] bg-center md:w-[365px] lg:w-[490px] sm:w-[500px] xl:w-[630px]"
+            className="h-[280px] w-[300px]  md:w-[365px] lg:w-[490px] sm:w-[500px] xl:w-[630px]"
             style={{ backgroundImage: `url("./img/Rectangle 161.png")` }}
           >
             <div className="pl-[60px]  w-full flex flex-col pt-[86px] gap-4 h-full">
-              <p className="text-[#0AAD0A]">Fresh Farm Products 40% Off</p>
+              <p className="text-[#0AAD0A] ">Fresh Farm Products 40% Off</p>
               <p className="font-[700] text-[20px]">Vegetable Big Sale</p>
            <Button name="Shop Now"/>
             </div>

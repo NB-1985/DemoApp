@@ -27,6 +27,7 @@ const Navbar = () => {
     };
   });
 
+  //* for react select options
   const options = [
     {
       value: "FRUITES",
@@ -45,18 +46,19 @@ const Navbar = () => {
   return (
     <div>
       {/* main container */}
-      <div className=" bg-[#2F4858] text-[#FFFFFF]">
+      <div className=" bg-[#2F4858] text-[#FFFFFF] ">
         {/* inner container */}
 
         <div
           ref={menu}
-          className=" w-[90%] relative py-[22px] mx-auto flex justify-between items-center"
+          className=" w-[90%] relative py-[22px] mx-auto flex justify-between items-center transition-all ease-in duration-300"
         >
+
           {/* //^left part */}
           <div>
-            
-            {/* for select dropdown  */}
-            <Select
+
+            {/* //* for select dropdown  */}
+            {/* <Select
               options={options}
               defaultValue={value}
               onChange={setValue}
@@ -84,7 +86,18 @@ const Navbar = () => {
                   color: "white",
                 }),
               }}
-            />
+            /> */}
+            <select
+              className="bg-[#2F4858]"
+              id="cars"
+              name="carlist"
+              form="carform"
+            >
+              <option value="all categories">All Categories</option>
+              <option value="fruites">Fruites</option>
+              <option value="vagetables">Vegetables</option>
+              <option value="grocery">Grocery</option>
+            </select>
           </div>
 
           {/* //! middle part */}

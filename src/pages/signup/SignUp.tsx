@@ -205,9 +205,9 @@ const SignUp = () => {
       <div>
         <Link to={"/signup/login"}>
           <Button name="LogIn" className="hover:bg-zinc-700" />
-        </Link>
+        </Link> 
+          <Button name="HOME" className="ml-2 hover:bg-zinc-700" onclick={()=>navigate("/")}/>
       </div>
-      <Outlet />
     </div>
   );
 };

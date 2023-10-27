@@ -25,7 +25,6 @@ const Ingredient = () => {
 {/* <IngredientCard title="back" description="name" sale="78" bgi="https://images.pexels.com/photos/18281979/pexels-photo-18281979/free-photo-of-sweet-pancakes-on-plate-on-table.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"/> */}
 
 
-
         {/* //* second card  */}
         <div
           style={{ backgroundImage: `url("./img/image 32.png")` }}

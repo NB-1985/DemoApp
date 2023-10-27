@@ -1,9 +1,10 @@
-import { useSelector } from "react-redux";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { isLoggedIn } from "../auth/auth";
+import { useState } from "react";
 
 const Header = () => {
 
+  const [showDropDown,setShowDropDown]=useState(false)
   const navigate=useNavigate();
 
 
@@ -11,6 +12,7 @@ const Header = () => {
  let token:any= localStorage.getItem("token")
  let userData=JSON.parse(token)
 
+ 
 const CartRoute=()=>{
   if(isLoggedIn()){
     navigate("productdetail")
@@ -21,25 +23,20 @@ const CartRoute=()=>{
 
 
   const handleLogOut=()=>{
-   let conf=prompt("Are You sure you want to Log Out!!","Enter Yes For Log Out")
-    if(conf==="yes"){
       localStorage.removeItem("token")
       navigate("/")
-    }
-    
-    
+      alert("Logged Out Successfully!!")
   }
-
-
 
 
   return (
     <div>
+
       {/* main container */}
       <div className="bg-[#FFFFFF] ">
 
         {/* inner container */}
-        <div className="w-[90%]  h-[82px]  mx-auto flex justify-between items-center">
+        <div className="w-[90%] h-[82px]  mx-auto flex justify-between items-center">
 
           {/*  //!left part */}
           <div className="md:flex gap-10 " >
@@ -72,9 +69,9 @@ const CartRoute=()=>{
           <div className="flex sm:gap-8 gap-3">
 
             
-            <div className="flex sm:gap-2 cursor-pointer" onClick={CartRoute}>
+            <div className="flex sm:gap-2 gap-1 cursor-pointer" onClick={CartRoute}>
               <p className="hidden lg:block">My Cart</p>
-              <img src="./img/Group 879.svg" alt="cart"/>
+              <img src="./img/Group 879.svg" alt="cart" className="w-4 sm:w-6"/>0
             </div>
             
 
@@ -95,6 +92,11 @@ const CartRoute=()=>{
                   <p className="sm:text-[16px]  text-[13px] items-center  cursor-pointer" onClick={()=>navigate("signup")}>LogIn</p>
                   </div>
               }
+
+
+            
+
+      
             </div>
           </div>
 

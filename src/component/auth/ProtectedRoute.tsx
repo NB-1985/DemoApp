@@ -9,7 +9,7 @@ useEffect(()=>{
     if(!login){
         navigate("/signup")
     }
-})
+},[])
   return (
     <div>
         {component}

@@ -12,6 +12,7 @@ useEffect(()=>{
         navigate("/")
     }
 },[])
+
   return (
     <div>
         {component}
