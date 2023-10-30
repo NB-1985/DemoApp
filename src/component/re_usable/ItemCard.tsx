@@ -18,10 +18,10 @@ const ItemCard = ({
 
 
   return (
-<div className="pb-12 px-3">
+<div className="pb-12 mx-3 md:mx-0">
     <div
       className="border-slate-200  border-2  h-[346px] md:w-[218px]  sm:w-[180px]
-          flex flex-col justify-evenly px-2"
+          flex flex-col justify-evenly p-2"
     >
       <div className="grid place-content-center relative ">
         <div className="h-12 text-white text-[14px] flex-col items-center font-[500] absolute right-0 top-0 bg-[#5A9C17] rounded-full w-12 flex justify-center ">
@@ -31,7 +31,7 @@ const ItemCard = ({
 
         </div>
 
-       <Link to={"productdetail"}><img src={`${itemImage}`} alt="item image" /></Link> 
+       <Link to={"productdetail"}><img src={itemImage} alt="item image" /></Link> 
       </div>
 
       <div>

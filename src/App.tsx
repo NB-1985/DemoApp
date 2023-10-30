@@ -10,6 +10,7 @@ import SignUp from "./pages/signup/SignUp";
 import Login from "./pages/login/Login";
 import ProtectedRoute from "./component/auth/ProtectedRoute";
 import Restricted from "./component/auth/Restricted";
+import ListingPage from "./pages/products/ListingPage";
 
 const App = () => {
   const Layout = () => {
@@ -41,6 +42,7 @@ const App = () => {
                 path="productdetail"
                 element={<ProtectedRoute component={<ProductDetail />} />}
               />
+              <Route path="listingpage" element={<ListingPage/>}/>
             </Route>
             <Route
               path="signup"

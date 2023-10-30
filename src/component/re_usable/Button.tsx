@@ -11,12 +11,12 @@
 interface button {
   className?:string;
   name?:string;
-  onclick?:any;
+  onClick?:any;
 }
 
-const Button=({name,className,onclick}:button)=>{
+const Button=({name,className,onClick}:button)=>{
 return (
-  <button onClick={onclick} className={ `${className && className} bg-[#5A9C17] w-[160px] h-[45px]  text-white text-[16px] `}>{name}</button>
+  <button onClick={onClick} className={ `${className && className} bg-[#5A9C17] w-[160px] h-[45px]  text-white text-[16px] `}>{name}</button>
 )
 };
 

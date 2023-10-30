@@ -4,8 +4,23 @@ import axios from "axios";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { useDispatch, useSelector } from "react-redux";
+import { itemCard } from "../../slices_reducers/itemCard";
 
 const TopSellingItems = () => {
+
+
+  const dispatch:any=useDispatch();
+
+
+  //*destructure the user from showUser and get the access of data and we can map it 
+  const {data}=useSelector((state:any)=>state.card)
+
+  // ^ for load the userdata in page
+  useEffect(() => {
+    dispatch(itemCard());
+  }, []);
+
  
   const settings = {
     dots: true,
@@ -66,8 +81,9 @@ const TopSellingItems = () => {
     ],
   };
 
+
   return (
-    <div className="pt-[80px] ">
+    <div className="pt-[80px]">
       {/* //* container  */}
       <div className="w-[90%] mx-auto">
 
@@ -81,59 +97,16 @@ const TopSellingItems = () => {
 
 
         {/*  //^ card  container */}
-        <div className="pt-[24px]">
-          <Slider {...settings}>
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
-            <ItemCard
-              title="Maggi"
-              description="Madhur Pure & Hygienic Sulphurless Sugar..."
-              price="$0.48"
-              itemImage="./img/image 23.png"
-            />
+        <div className="pt-[24px] ">
+        <Slider {...settings}>
+        {data.slice(0,20).map((item: any) => (
+              <ItemCard title={item.title} itemImage={item.url} key={item.id}/>
+            ))}
           </Slider>
-        </div>
-        {/* //! card container ends here  */}
+        </div>    {/* //! card container ends here  */}
+     
+
+
       </div>
     </div>
   );

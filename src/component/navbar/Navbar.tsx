@@ -58,7 +58,7 @@ const Navbar = () => {
           <div>
 
             {/* //* for select dropdown  */}
-            {/* <Select
+            <Select
               options={options}
               defaultValue={value}
               onChange={setValue}
@@ -86,8 +86,8 @@ const Navbar = () => {
                   color: "white",
                 }),
               }}
-            /> */}
-            <select
+            />
+            {/* <select
               className="bg-[#2F4858]"
               id="cars"
               name="carlist"
@@ -97,7 +97,7 @@ const Navbar = () => {
               <option value="fruites">Fruites</option>
               <option value="vagetables">Vegetables</option>
               <option value="grocery">Grocery</option>
-            </select>
+            </select> */}
           </div>
 
           {/* //! middle part */}

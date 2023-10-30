@@ -142,7 +142,7 @@ const Login = () => {
       </div>
       
       <div className="py-3">
-      <Button onclick={()=>navigate(-1)} name="BACK" className="hover:bg-zinc-700"/>
+      <Button onClick={()=>navigate(-1)} name="BACK" className="hover:bg-zinc-700"/>
       </div>
     </div>
   );

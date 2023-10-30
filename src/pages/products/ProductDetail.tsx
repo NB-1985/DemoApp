@@ -6,35 +6,15 @@ import "slick-carousel/slick/slick-theme.css";
 import ItemCard from "../../component/re_usable/ItemCard";
 
 const ProductDetail = () => {
-  function SampleNextArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "red" }}
-        onClick={onClick}
-      />
-    );
-  }
 
-  function SamplePrevArrow(props: any) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style, display: "block", background: "green" }}
-        onClick={onClick}
-      />
-    );
-  }
+
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 3,
-    // nextArrow: <SampleNextArrow />,
-    // prevArrow: <SamplePrevArrow />,
+ 
     responsive: [
       {
         breakpoint: 1280,
@@ -335,7 +315,6 @@ const ProductDetail = () => {
       </div>
 
       {/* //^ product rating */}
-
       <div className="pt-[60px]">
         <div className="mx-auto w-[90%] h-[383px] flex flex-col justify-between">
           {/* top part  */}
