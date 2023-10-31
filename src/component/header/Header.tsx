@@ -92,10 +92,6 @@ const CartRoute=()=>{
                   <p className="sm:text-[16px]  text-[13px] items-center  cursor-pointer" onClick={()=>navigate("signup")}>LogIn</p>
                   </div>
               }
-
-
-            
-
       
             </div>
           </div>
