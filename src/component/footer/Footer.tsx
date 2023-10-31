@@ -51,7 +51,7 @@ const Footer = () => {
             <input
               type="text"
               placeholder="Enter Your Email"
-              className="sm:w-[454px] w-[230px]"
+              className="sm:w-[454px] focus:outline-none w-[230px]"
             />
             <p className="absolute right-0 bg-black text-white rounded-full p-4 top-0">
               Subscribe
