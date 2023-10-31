@@ -60,7 +60,7 @@ const CartRoute=()=>{
             <input
               type="text"
               placeholder="What are you looking for ?"
-              className="lg:w-[454px] bg-[#F1F1F1] w-[100%]"
+              className="lg:w-[454px] bg-[#F1F1F1] w-[100%] focus:outline-none"
             />
             <img src="./img/Union.svg" alt="search" className="hidden sm:block" />
           </div>
