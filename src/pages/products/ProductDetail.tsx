@@ -16,7 +16,6 @@ const ProductDetail = () => {
   //*destructure the user from showUser and get the access of data and we can map it
   const { data } = useSelector((state: any) => state.card);
   const showData = data.hints;
-  // console.log(showData);
 
   // ^ for load the userdata in page
   useEffect(() => {
