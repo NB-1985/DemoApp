@@ -42,7 +42,7 @@ const App = () => {
                 path="productdetail"
                 element={<ProtectedRoute component={<ProductDetail />} />}
               />
-              <Route path="listingpage" element={<ListingPage/>}/>
+              <Route path="listingpage" element={<ListingPage />} />
             </Route>
             <Route
               path="signup"

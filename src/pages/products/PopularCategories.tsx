@@ -5,19 +5,21 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { itemCard } from "../../slices_reducers/itemCard";
 
 const PopularCategories = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    const data: any = async () => {
-      const res = await axios.get(
-        "https://jsonplaceholder.typicode.com/photos"
-      );
-      setData(res.data);
-    };
-    data();
-  }, []);
+  const dispatch: any = useDispatch();
 
+  //*destructure the user from showUser and get the access of data and we can map it
+  const { data } = useSelector((state: any) => state.card);
+  const showData = data.hints;
+  console.log(showData);
+
+  // ^ for load the userdata in page
+  useEffect(() => {
+    dispatch(itemCard());
+  }, []);
   //* slider settings...
   const settings = {
     dots: true,
@@ -83,26 +85,29 @@ const PopularCategories = () => {
       {/* container */}
       <div className="w-[90%] mx-auto flex flex-col ">
         {/*  //* tittle */}
-        <p className="font-[700] text-[24px] text-center">Popular Categories</p>
+        <p className="font-[700] text-[24px] text-center">Popular Items</p>
 
         {/* //! products */}
-        <div className="pt-[38px]">
+        <div className="pt-[38px] ">
           <Slider {...settings}>
-            {data.slice(0,20).map((item: any) => (
-              <ProductCategories title={item.id} image={item.url} key={item.id}/>
-            ))}
+            {showData &&
+              showData.map((item: any) => (
+                <ProductCategories
+                  title={item.food.label}
+                  image={item.food.image}
+                  key={item.food.foodId}
+                />
+              ))}
           </Slider>
         </div>
-
 
         {/* //* offers sale  */}
         <div
           className="pt-[80px] flex
         flex-wrap md:flex-nowrap  
          items-center justify-center
-         gap-8">
-
-
+         gap-8"
+        >
           {/*  //^ left img  */}
           <div>
             <div
@@ -117,7 +122,6 @@ const PopularCategories = () => {
             </div>
           </div>
 
-
           {/* //^ right img  */}
           <div>
             <div
@@ -131,7 +135,6 @@ const PopularCategories = () => {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

@@ -1,4 +1,3 @@
-
 const Footer = () => {
   return (
     <div className="pt-[30px]">
@@ -53,9 +52,9 @@ const Footer = () => {
               placeholder="Enter Your Email"
               className="sm:w-[454px] focus:outline-none w-[230px]"
             />
-            <p className="absolute right-0 bg-black text-white rounded-full p-4 top-0">
+            <button className="absolute right-0 bg-black text-white rounded-full p-4 top-0">
               Subscribe
-            </p>
+            </button>
           </div>
 
           <div className="flex gap-4">
@@ -79,8 +78,6 @@ const Footer = () => {
 
       {/* //! rights reserved  */}
       <div className="pt-[24px] pb-[40px]">
-
-
         <div className="w-[90%]  mx-auto flex flex-col  sm:flex-row sm:items-center sm:justify-between">
           <p>
             <span className="font-[700]">Epic Grocery</span> 2023. All Rights
@@ -99,8 +96,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-
       </div>
     </div>
   );

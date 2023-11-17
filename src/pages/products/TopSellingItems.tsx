@@ -6,22 +6,20 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useDispatch, useSelector } from "react-redux";
 import { itemCard } from "../../slices_reducers/itemCard";
+import { Link, useParams } from "react-router-dom";
 
 const TopSellingItems = () => {
+  const dispatch: any = useDispatch();
 
-
-  const dispatch:any=useDispatch();
-
-
-  //*destructure the user from showUser and get the access of data and we can map it 
-  const {data}=useSelector((state:any)=>state.card)
+  //*destructure the user from showUser and get the access of data and we can map it
+  const { data } = useSelector((state: any) => state.card);
+  const showData = data.hints;
 
   // ^ for load the userdata in page
   useEffect(() => {
     dispatch(itemCard());
   }, []);
 
- 
   const settings = {
     dots: true,
     infinite: true,
@@ -81,12 +79,10 @@ const TopSellingItems = () => {
     ],
   };
 
-
   return (
     <div className="pt-[80px]">
       {/* //* container  */}
       <div className="w-[90%] mx-auto">
-
         {/* //* title  */}
         <div className="grid place-content-center">
           <p className="pb-[8px] font-[700] text-[24px]"> Top Selling Items</p>
@@ -94,19 +90,22 @@ const TopSellingItems = () => {
             Available at Best Prices
           </p>
         </div>
-
-
         {/*  //^ card  container */}
         <div className="pt-[24px] ">
-        <Slider {...settings}>
-        {data.slice(0,20).map((item: any) => (
-              <ItemCard title={item.title} itemImage={item.url} key={item.id}/>
-            ))}
+          <Slider {...settings}>
+            {showData &&
+              showData.map((item: any) => (
+                <Link to={`productdetail`}>
+                  <ItemCard
+                    title={item.food.label}
+                    itemImage={item.food.image}
+                    key={item.food.foodId}
+                  />
+                </Link>
+              ))}
           </Slider>
-        </div>    {/* //! card container ends here  */}
-     
-
-
+        </div>{" "}
+        {/* //! card container ends here  */}
       </div>
     </div>
   );

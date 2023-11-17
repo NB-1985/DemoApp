@@ -1,12 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "../../component/re_usable/Button";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ItemCard from "../../component/re_usable/ItemCard";
+import { useDispatch, useSelector } from "react-redux";
+import { itemCard } from "../../slices_reducers/itemCard";
+import { Link, useParams } from "react-router-dom";
+import axios from "axios";
 
 const ProductDetail = () => {
+  const { id } = useParams();
+  const dispatch: any = useDispatch();
 
+  //*destructure the user from showUser and get the access of data and we can map it
+  const { data } = useSelector((state: any) => state.card);
+  const showData = data.hints;
+  // console.log(showData);
+
+  // ^ for load the userdata in page
+  useEffect(() => {
+    dispatch(itemCard());
+  }, []);
 
   const settings = {
     dots: true,
@@ -14,7 +29,7 @@ const ProductDetail = () => {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 3,
- 
+
     responsive: [
       {
         breakpoint: 1280,
@@ -70,23 +85,33 @@ const ProductDetail = () => {
   return (
     <div>
       <div className="pt-[40px]">
-
         {/* //^ product container  */}
         <div className="w-[90%] mx-auto xl:h-[572px] flex  flex-col xl:flex-row">
-
           {/* //^ left side  */}
           <div className=" flex justify-center  xl:pr-[142px]">
-            <div className="flex flex-col gap-4 ">
+            <div className="flex flex-col gap-4 mr-4">
               <p className=" w-[80px]">
-                <img src="./img/Rectangle 5.svg" alt="" className="border-2" />
+                <img
+                  src={showData && showData[4].food.image}
+                  alt=""
+                  className="border-2"
+                />
               </p>
               <p className=" ">
-                <img src="./img/Rectangle 6.svg" alt="" className="border-2" />
+                <img
+                  src={showData && showData[4].food.image}
+                  alt=""
+                  className="border-2 w-20"
+                />
               </p>
             </div>
             <div>
               <p className=" flex lg:w-[520px]  xl:h-[392px] ">
-                <img src="./img/Rectangle 4.png" alt="" className="border-2" />
+                <img
+                  src={showData && showData[4].food.image}
+                  alt=""
+                  className="border-2"
+                />
               </p>
             </div>
           </div>
@@ -95,13 +120,11 @@ const ProductDetail = () => {
           <div className=" flex justify-center pt-[24px] xl:pt-0">
             <div className="xl:w-[468px]">
               <p className="text-[24px] font-[400] leading-[30.24px] pb-[16px]">
-                Fresho Apple - Red Delicious, Regular, 4pcs (Approx. 530g -
-                640g)
+                {showData && showData[4].food.label}
               </p>
               <p className="pb-[10px]">
                 <span className="font-[700] text-[16px]">$4,164.94 </span>
                 <span className="font-[500]">
-                  {" "}
                   You Save: 20%(Inclusive of all taxes)
                 </span>
               </p>
@@ -238,7 +261,6 @@ const ProductDetail = () => {
       </div>
       <div className="border-b-2 w-[90%] mx-auto pt-[60px]"></div>
 
-
       {/* //! dont forget to add  */}
 
       <div className="pt-[60px]">
@@ -248,66 +270,14 @@ const ProductDetail = () => {
           </div>
           <div className="mx-auto w-full sm:ml-0 ">
             <Slider {...settings}>
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
-              <ItemCard
-                itemImage="./img/image 23.svg"
-                title="Neem"
-                description="Neem Powder"
-                price="$1.59"
-              />
+              {showData &&
+                showData.map((item: any) => (
+                  <ItemCard
+                    title={item.food.label}
+                    itemImage={item.food.image}
+                    key={item.food.foodId}
+                  />
+                ))}
             </Slider>
           </div>
         </div>
